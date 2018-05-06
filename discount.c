@@ -58,17 +58,15 @@ static int compile(lua_State *L) {
     char *body = NULL, *toc = NULL, *css = NULL;
     int body_size, toc_size, css_size, i, argc;
 
-    int input_size;
-    size_t lstr_size;
-    const char *input = luaL_checklstring(L, 1, &lstr_size);
-    luaL_argcheck(L, lstr_size < INT_MAX, 1, "string too long");
-    input_size = (int) lstr_size;
+    size_t input_size;
+    const char *input = luaL_checklstring(L, 1, &input_size);
+    luaL_argcheck(L, input_size < INT_MAX, 1, "string too long");
 
     for (i = 2, argc = lua_gettop(L); i <= argc; i++) {
         flags |= option_codes[luaL_checkoption(L, i, NULL, options)];
     }
 
-    doc = mkd_string(input, input_size, flags);
+    doc = mkd_string(input, (int) input_size, flags);
     if (doc == NULL) {
         lua_pushnil(L);
         lua_pushstring(L, "mkd_string() returned NULL");
@@ -109,8 +107,10 @@ static int compile(lua_State *L) {
 }
 
 int luaopen_discount(lua_State *L) {
-    lua_createtable(L, 0, 1);
+    lua_createtable(L, 0, 2);
     lua_pushcfunction(L, compile);
     lua_setfield(L, -2, "compile");
+    lua_pushstring(L, markdown_version);
+    lua_setfield(L, -2, "_libmarkdown_version");
     return 1;
 }

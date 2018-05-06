@@ -1,5 +1,7 @@
+-- This file was automatically generated for the LuaDist project.
+
 package = "discount"
-version = "scm-1"
+version = "0.4-1"
 
 description = {
     summary = "Lua bindings for the Discount Markdown library",
@@ -7,10 +9,16 @@ description = {
     license = "ISC"
 }
 
+-- LuaDist source
 source = {
-    url = "git+https://gitlab.com/craigbarnes/lua-discount.git",
-    branch = "master"
+  tag = "0.4-1",
+  url = "git://github.com/LuaDist-testing/discount.git"
 }
+-- Original source
+-- source = {
+--     url = "https://craigbarnes.gitlab.io/dist/lua-discount/lua-discount-0.4.tar.gz",
+--     md5 = "919647cfea67d7430f4516609e442e4d"
+-- }
 
 dependencies = {
     "lua >= 5.1"
