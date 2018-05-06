@@ -7,22 +7,13 @@ Requirements
 ------------
 
 * C compiler
-* [GNU Make] `>= 3.81`
 * [Lua] `>= 5.1`
 * [Discount] `>= 2.2.1`
 
 Installation
 ------------
 
-**With LuaRocks:**
-
     luarocks install discount
-
-**With GNU Make:**
-
-    make
-    make check
-    [sudo] make install
 
 Usage
 -----
@@ -100,7 +91,7 @@ embed           | Equivalent to combining `nolinks`, `noimages` and `tagtext`
 [License]
 ---------
 
-Copyright (c) 2012-2015 Craig Barnes
+Copyright (c) 2012-2018 Craig Barnes
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -118,7 +109,6 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 [License]: http://en.wikipedia.org/wiki/ISC_license "ISC License"
 [Discount]: http://www.pell.portland.or.us/~orc/Code/discount/
 [Markdown]: https://en.wikipedia.org/wiki/Markdown
-[GNU Make]: https://www.gnu.org/software/make/
 [Lua]: https://www.lua.org/
 [SmartyPants]: http://www.pell.portland.or.us/~orc/Code/discount/#smartypants
 [Markdown Extra]: https://michelf.ca/projects/php-markdown/extra/
